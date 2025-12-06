@@ -1,0 +1,99 @@
+---
+title: "SEMANA 12, sistematizacion"
+author: "Aisha Zambrano"
+format: html
+editor: visual
+---
+
+## Semana 12
+
+Si tienes el archivo en Descargas, por ejemplo:
+  
+```{r}
+setwd("C:/Users/Aisha/Downloads")
+```
+
+1.  Cargar data
+
+```{r}
+data <- read.csv("bac_aguda.csv")
+head(data)
+```
+
+2.  Seleccionar una columna
+
+Ejemplo: seleccionar "edad"
+
+```{r}
+edad <- data$edad
+```
+
+3.  Eliminar valores vacíos
+
+```{r}
+data <- na.omit(data)
+```
+
+4. Varianza
+
+```{r}
+var_edad <- var(data$edad)
+```
+
+5. Desviación estándar
+
+```{r}
+sd_edad <- sd(data$edad)
+```
+
+6. Rango
+
+```{r}
+rango <- range(data$edad)
+rango_total <- diff(rango)
+```
+
+7. Rango intercuartílico
+
+```{r}
+RIC <- IQR(data$edad)
+```
+
+8. Cuartiles
+
+```{r}
+cuartiles <- quantile(data$edad)
+```
+
+9. Mostrar primeras 6 filas
+
+```{r}
+head(data)
+```
+
+10. Resumen de todas las medidas de la variable
+
+```{r}
+summary(data$edad)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

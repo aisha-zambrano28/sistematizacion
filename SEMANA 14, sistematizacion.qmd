@@ -1,0 +1,66 @@
+---
+title: "SEMANA 14, sistematizacion"
+author: "Aisha Zambrano"
+format: html
+editor: visual
+---
+
+## Semana 14
+
+Si tienes el archivo en Descargas, por ejemplo:
+  
+```{r}
+setwd("C:/Users/Aisha/Downloads")
+```
+
+1.  Cargar data
+
+```{r}
+data <- read.csv("bac_aguda.csv")
+head(data)
+```
+
+2.  Seleccionar una columna
+
+Ejemplo: seleccionar "edad"
+
+```{r}
+edad <- data$edad
+```
+
+3.  Eliminar valores vacíos
+
+```{r}
+data <- na.omit(data)
+```
+
+4. Regresión lineal (edad vs hemoglobina)
+
+```{r}
+modelo1 <- lm(leucocitos_sangre ~ edad, data = data)
+summary(modelo1)
+```
+
+5. Análisis Univariado
+
+Ejemplo: distribución de glucosa
+
+```{r}
+summary(data$glucosa)
+hist(data$glucosa_sangre, main="glucosa_sangre - Análisis univariado")
+```
+
+6. Análisis Multivariado
+
+Ejemplo: regresión múltiple
+
+```{r}
+modelo2 <- lm(glucosa_sangre ~ edad + leucocitos_sangre + sexo, data = data)
+summary(modelo2)
+```
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+---
+title: "SEMANA 10, sistematizacion"
+author: "Aisha Zambrano"
+format: html
+editor: visual
+---
+
+## Semana 10
+
+Si tienes el archivo en Descargas, por ejemplo:
+
+```{r}
+setwd("C:/Users/Aisha/Downloads")
+```
+
+1.  Cargar data
+
+```{r}
+data <- read.csv("bac_aguda.csv")
+head(data)
+```
+
+2.  Seleccionar una columna
+
+Ejemplo: seleccionar "edad"
+
+```{r}
+edad <- data$edad
+```
+
+3.  Eliminar valores vacíos
+
+```{r}
+data <- na.omit(data)
+```
+
+4.  Supongamos que usamos la variable edad
+
+```{r}
+media <- mean(data$edad)
+mediana <- median(data$edad)
+moda <- names(sort(table(data$edad), decreasing = TRUE))[1]
+
+media; mediana; moda
+```

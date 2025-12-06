@@ -1,0 +1,50 @@
+---
+title: "SEMANA 8, sistematizacion"
+author: "Aisha Zambrano"
+format: html
+editor: visual
+---
+
+## Semana 8
+
+Si tienes el archivo en Descargas, por ejemplo:
+
+```{r}
+setwd("C:/Users/Aisha/Downloads")
+```
+
+1.  Cargar data
+
+```{r}
+data <- read.csv("bac_aguda.csv")
+head(data)
+```
+
+2.  Seleccionar una columna
+
+Ejemplo: seleccionar "edad"
+
+```{r}
+edad <- data$edad
+```
+
+3.  Eliminar valores vacíos
+
+```{r}
+data <- na.omit(data)
+```
+
+4.  Instalar paquete
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+5.  Histograma de una variable (ej: edad)
+
+```{r}
+ggplot(data, aes(x = edad)) +
+  geom_histogram(binwidth = 5) +
+  labs(title = "Histograma de Edad", x = "Edad", y = "Frecuencia")
+```
